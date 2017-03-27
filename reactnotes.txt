@@ -1,0 +1,19 @@
+MESSAGE:
+-just testing if you can understand how props are passed down
+-send in some props to the component and test the html to make sure that they are there
+-include a counting spec that would test understanding of using map to make a number of sub-elements
+-multiple tests to prevent it from being hardcoded
+
+
+INBOX:
+-using the redux store
+
+NEW MESSAGE FORM:
+-
+
+REDUX SECTION:
+-separate testing file
+
+
+
+-FOLLOW THEIR STRUCTURE: start at lowest level working with passed in props, then go up the chain to a higher level one with state, make one form

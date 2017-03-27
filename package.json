@@ -1,0 +1,53 @@
+{
+  "name": "boiler",
+  "version": "1.0.0",
+  "description": "Personal project boilerplate",
+  "main": "index.js",
+  "directories": {
+    "test": "mocha tests/ --recursive --watch --compilers js:babel-register",
+    "build": "webpack",
+    "build-watch": "webpack -w"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/index.js",
+    "build": "webpack",
+    "build-watch": "webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sbwheeler/Boiler.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sbwheeler/Boiler/issues"
+  },
+  "homepage": "https://github.com/sbwheeler/Boiler#readme",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "babel": "^6.23.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "body-parser": "^1.17.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "react-router": "^3.0.0",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
+    "webpack": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "chai": "^3.5.0",
+    "chalk": "^1.1.3",
+    "mocha": "^3.2.0",
+    "morgan": "^1.8.1",
+    "nodemon": "^1.11.0",
+    "redux-logger": "^2.8.2",
+    "volleyball": "^1.4.1"
+  }
+}
