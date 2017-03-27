@@ -3,14 +3,8 @@
   "version": "1.0.0",
   "description": "Personal project boilerplate",
   "main": "index.js",
-  "directories": {
-    "test": "mocha tests/ --recursive --watch --compilers js:babel-register",
-    "build": "webpack",
-    "build-watch": "webpack -w"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server/index.js",
+    "test": "mocha tests/ --watch --compilers js:babel-register",
     "build": "webpack",
     "build-watch": "webpack -w"
   },
@@ -28,6 +22,7 @@
     "axios": "^0.15.3",
     "babel": "^6.23.0",
     "babel-preset-stage-2": "^6.22.0",
+    "babel-register": "^6.24.0",
     "body-parser": "^1.17.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
