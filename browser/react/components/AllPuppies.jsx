@@ -1,18 +1,32 @@
 import React from 'react';
-import store from '../redux/store';
+import store from '../../redux/store';
 import SinglePuppyComponent from './SinglePuppy';
 
-//THIS WILL RENDER A NUMBER OF THE SINGLE PUPPY COMPONENTS BASED ON PASSED IN STATE
-export default class extends React.Component {
+class AllPuppiesComponent extends React.Component {
   constructor() {
     super();
+    this.state = store.getState();
+    this.unsubscribe;
+  }
+
+  componentDidMount() {
+    this.unsubscribe = store.subscribe(() => {
+      this.setState(store.getState());
+    });
+  }
+
+  componentWillUnmount() {
+    this.unsubscribe();
   }
 
   render() {
     return (
       <div>
-        <h1>Inbox</h1>
+        <h1>You have {this.state.puppies.length} Puppies:</h1>
+        {this.state.puppies.map(puppy => <SinglePuppyComponent puppy={puppy} />)}
       </div>
     );
   }
 }
+
+export default AllPuppiesComponent;
