@@ -8,7 +8,6 @@ import { fetchSinglePuppyAction, fetchAllPuppiesAction } from '../browser/redux/
 import { fetchSingleKittyAction, fetchAllKittiesAction } from '../browser/redux/kittiesActions';
 import SinglePuppyComponent from '../browser/react/components/SinglePuppy';
 import SingleKittyComponent from '../browser/react/components/SingleKitty';
-import AllCuteAnimalsComponent from '../browser/react/components/AllCuteAnimals';
 import store from '../browser/redux/store';
 
 describe('React', () => {
