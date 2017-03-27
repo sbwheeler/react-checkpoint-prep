@@ -8,11 +8,11 @@ import kittiesReducer from '../browser/redux/kittiesReducer';
 import rootReducer from '../browser/redux/rootReducer';
 
 describe('Redux', () => {
-  const testPuppies = [{ name: 'damon doggo', adorableness: 5 }, { name: 'sam shiba', adorableness: 10 }];
-  const testPuppy = { name: 'damon doggo', adorableness: 5 };
+  const testPuppies = [{ name: 'damon doggo', adorableness: 5, size: 'small' }, { name: 'sam shiba', adorableness: 10, size: 'massive' }];
+  const testPuppy = { name: 'damon doggo', adorableness: 5, size: 'small' };
 
-  const testKitties = [{ name: 'ian meowro', adorableness: 2 }, { name: 'omri kittycat', adorableness: 8 }];
-  const testKitty = { name: 'ian meowro', adorableness: 1 };
+  const testKitties = [{ name: 'ian meowro', adorableness: 2, size: 'puny' }, { name: 'omri kittycat', adorableness: 8, size: 'medium' }];
+  const testKitty = { name: 'ian meowro', adorableness: 1, size: 'puny' };
 
   describe('Action creators', () => {
 
