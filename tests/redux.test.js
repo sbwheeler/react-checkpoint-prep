@@ -5,6 +5,7 @@ import { fetchSinglePuppyAction, fetchAllPuppiesAction } from '../browser/redux/
 import { fetchSingleKittyAction, fetchAllKittiesAction } from '../browser/redux/kittiesActions';
 import puppiesReducer from '../browser/redux/puppiesReducer';
 import kittiesReducer from '../browser/redux/kittiesReducer';
+import rootReducer from '../browser/redux/rootReducer';
 
 describe('Redux', () => {
   const testPuppies = [{ name: 'damon doggo', adorableness: 5 }, { name: 'sam shiba', adorableness: 10 }];
@@ -148,8 +149,35 @@ describe('Redux', () => {
 
     });
 
+
+
+    //HINT: take a look at where rootReducer is being imported from and check out the Redux docs for 'combineReducers': http://redux.js.org/docs/api/combineReducers.html
     describe('rootReducer', () => {
+      let testRootStore;
+
+      beforeEach('Create testing store', () => {
+        testRootStore = createStore(rootReducer);
+      });
+
+      it('has keys of kitties and puppies', () => {
+        const rootStoreState = testRootStore.getState();
+
+        expect(rootStoreState).to.have.property('kitties');
+        expect(rootStoreState).to.have.property('puppies');
+      });
+
+      it('the kitties and puppies keys have the expected initial states of the kitties and puppies sub-reducers respectively', () => {
+        expect(testRootStore.getState().kitties).to.be.deep.equal({
+          allKitties: [],
+          selectedKitty: {},
+        });
+
+        expect(testRootStore.getState().puppies).to.be.deep.equal({
+          allPuppies: [],
+          selectedPuppy: {},
+        });
+      });
 
     });
-  })
+  });
 });
