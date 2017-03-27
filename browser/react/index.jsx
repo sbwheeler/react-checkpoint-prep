@@ -1,9 +1,13 @@
 import React from 'react';
-import AllPuppiesComponent from './components/AllPuppies';
+import SinglePuppyComponent from './components/SinglePuppy';
+import SingleKittyComponent from './components/SingleKitty';
 
 const App = () => {
   return (
-    <AllPuppiesComponent />
+    <div>
+      <SinglePuppyComponent />
+      <SingleKittyComponent />
+    </div>
   );
 };
 
