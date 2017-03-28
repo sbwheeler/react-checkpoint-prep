@@ -4,7 +4,7 @@
   "description": "Personal project boilerplate",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/ --watch --compilers js:babel-register"
+    "test": "mocha ./tests --watch --compilers js:babel-register"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "chai-enzyme": "^0.6.1",
     "chai-properties": "^1.2.1",
     "chai-things": "^0.2.0",
+    "enzyme": "^2.8.0",
     "mocha": "^3.2.0",
     "react-addons-test-utils": "^15.4.2"
   }
