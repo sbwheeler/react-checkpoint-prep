@@ -4,18 +4,18 @@
   "description": "Personal project boilerplate",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/ --watch --compilers js:babel-register"
+    "test": "mocha ./tests --watch --compilers js:babel-register"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sbwheeler/Boiler.git"
+    "url": "git+https://github.com/sbwheeler/react-checkpoint-prep.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sbwheeler/Boiler/issues"
+    "url": "https://github.com/sbwheeler/react-checkpoint-prep/issues"
   },
-  "homepage": "https://github.com/sbwheeler/Boiler#readme",
+  "homepage": "https://github.com/sbwheeler/react-checkpoint-prep#readme",
   "dependencies": {
     "babel": "^6.23.0",
     "babel-preset-stage-2": "^6.22.0",
