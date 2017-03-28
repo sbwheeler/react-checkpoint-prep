@@ -3,8 +3,8 @@ import { createStore } from 'redux';
 import { FETCH_SINGLE_PUPPY, FETCH_ALL_PUPPIES, FETCH_SINGLE_KITTY, FETCH_ALL_KITTIES } from '../browser/redux/constants';
 import { fetchSinglePuppyAction, fetchAllPuppiesAction } from '../browser/redux/puppiesActions';
 import { fetchSingleKittyAction, fetchAllKittiesAction } from '../browser/redux/kittiesActions';
-import puppiesReducer from '../browser/redux/puppiesReducer';
-import kittiesReducer from '../browser/redux/kittiesReducer';
+import puppiesReducer, { puppiesDefaultState } from '../browser/redux/puppiesReducer';
+import kittiesReducer, { kittiesDefaultState } from '../browser/redux/kittiesReducer';
 import rootReducer from '../browser/redux/rootReducer';
 
 describe('Redux', () => {
@@ -88,9 +88,17 @@ describe('Redux', () => {
       });
 
       describe('reducing on FETCH_SINGLE_PUPPY', () => {
+        const singlePuppyAction = {
+          type: FETCH_SINGLE_PUPPY,
+          puppy: testPuppy
+        };
+
+        it('returns a NEW object, not a mutation', () => {
+          testPuppyStore.dispatch(singlePuppyAction);
+          expect(testPuppyStore.getState()).to.not.equal(puppiesDefaultState)
+        });
 
         it('affects the state by putting the single puppy object on the state\'s selectedPuppy key', () => {
-          const singlePuppyAction = fetchSinglePuppyAction(testPuppy);
 
           testPuppyStore.dispatch(singlePuppyAction);
 
@@ -100,7 +108,10 @@ describe('Redux', () => {
 
       describe('reducing on FETCH_ALL_PUPPIES', () => {
         it('affects the state by putting the all kitties array on the state\'s allKitties key', () => {
-          const allPuppiesAction = fetchAllPuppiesAction(testPuppies);
+          const allPuppiesAction = {
+            type: FETCH_ALL_PUPPIES,
+            allPuppies: testPuppies
+          };
 
           testPuppyStore.dispatch(allPuppiesAction);
 
@@ -127,9 +138,17 @@ describe('Redux', () => {
       });
 
       describe('reducing on FETCH_SINGLE_KITTY', () => {
+        const singleKittyAction = {
+          type: FETCH_SINGLE_KITTY,
+          kitty: testKitty
+        };
+
+        it('returns a NEW object, not a mutation', () => {
+          testKittyStore.dispatch(singleKittyAction);
+          expect(testKittyStore.getState()).to.not.equal(kittiesDefaultState)
+        });
 
         it('affects the state by putting the single kitty object on the state\'s selectedKitty key', () => {
-          const singleKittyAction = fetchSingleKittyAction(testKitty);
 
           testKittyStore.dispatch(singleKittyAction);
 
