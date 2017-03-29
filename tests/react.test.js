@@ -15,18 +15,25 @@ describe('React', () => {
   describe('SinglePuppy component layout', () => {
     let SinglePuppyComponentWrapper;
 
-    //this is creating a wrapper around our SinglePuppyComponent that we can then test on
+    // this is creating a SinglePuppyComponent that we can then test on
     beforeEach('Create <SinglePuppyComponent /> wrapper for testing', () => {
       const puppy = { name: 'Damon Doggo', adorableness: 5, size: 'small' };
 
       SinglePuppyComponentWrapper = shallow(<SinglePuppyComponent puppy={puppy}/>);
     });
 
-    it('has the expected layout', () => {
+    it('has an H1 tag with the puppy\'s name', () => {
       expect(SinglePuppyComponentWrapper.find('h1')).to.have.html('<h1>Damon Doggo</h1>');
+    });
+
+    it('has an H2 tag with the puppy\'s adorableness level', () => {
       expect(SinglePuppyComponentWrapper.find('h2')).to.have.html('<h2>Adorableness Level: 5</h2>');
+    });
+
+    it('has a P tag with the puppy\'s size', () => {
       expect(SinglePuppyComponentWrapper.find('p')).to.have.html('<p>Size: small</p>');
-    })
+    });
+
 
     it('is not hardcoded, and will render differently if passed in a different puppy prop', () => {
       const newPuppy = { name: 'Ian Woofro', adorableness: 2, size: 'puny' };
@@ -41,7 +48,7 @@ describe('React', () => {
     describe('SingleKitty component layout', () => {
     let SingleKittyComponentWrapper;
 
-    //this is creating a wrapper around our SinglePuppyComponent that we can then test on
+    // this is creating a SinglePuppyComponent that we can then test on
     beforeEach('Create <SingleKittyComponent /> wrapper for testing', () => {
       const kitty = { name: 'Ian Meowro', adorableness: 1, size: 'medium' };
 
